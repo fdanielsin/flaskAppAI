@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {# Ici, on fait l’appel au `CSS` (pour avoir le style) #}
+    {# Cet appel se fait à l'aide de la balise
+    <link> où on y indique le path pour accéder à la feuille de style #}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+    <br />
+    <h1>Reconnaissance facial</h1>
+    {% if noMatch == True %}
+    <h2>Visage non reconnu</h2>
+    {% endif %}
+    {% if noImage == True %}
+    <h2>Aucune image</h2>
+    {% endif %}
+    
+    <form action="." method="POST" enctype="multipart/form-data">
+        <div class="flexClass">
+                <input class="selectFiles" type="file" id="imgRecoFacial" name="imgRecoFacial" accept=".jpg, .jpeg, .png">
+
+                <button type="submit" style="border-radius: 0px 4px 4px 0px;">Reconnaissance</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

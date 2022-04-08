@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {# Ici, on fait l’appel au `CSS` (pour avoir le style) #}
+    {# Cet appel se fait à l'aide de la balise
+    <link> où on y indique le path pour accéder à la feuille de style #}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+    <ul>
+        <li><a href=upload>Upload</a></li>
+        <li><a href=search>Search</a></li>
+        <li><a href=list>List</a></li>
+    </ul>
+
+    <br />
+
+    <form action="." method="POST" enctype="multipart/form-data">
+        <div class="flexClass">
+                <input class="selectFiles" type="file" id="images" name="images" accept=".jpg, .jpeg, .png" multiple>
+
+                <button type="submit" style="border-radius: 0px 4px 4px 0px;">Envoyer</button>
+        </div>
+    </form>
+
+    <br />
+    <div class="listImage">
+        {% if urls %}
+        {% for url in urls %}
+        <div class="images">
+            <img src="{{ url }}">
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

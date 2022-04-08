@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+    <ul>
+        <li><a href=upload>Upload</a></li>
+        <li><a href=search>Search</a></li>
+        <li><a href=list>List</a></li>
+    </ul>
+
+
+    <br />
+
+    <form action="." method="POST">
+        <input type="text" id="listImages" name="listImages" value="true" hidden/>
+        <div>
+            <button type="submit">Afficher la liste des images</button>
+        </div>
+    </form>
+
+    <br />
+    <div class="listImage">
+        {% if urls %}
+        {% for url in urls %}
+        <div class="images">
+            <img src="{{ url }}">
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

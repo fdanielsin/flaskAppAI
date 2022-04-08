@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+    <ul>
+        <li><a href=upload>Upload</a></li>
+        <li><a href=search>Search</a></li>
+        <li><a href=list>List</a></li>
+    </ul>
+
+
+    <br />
+
+    <form action="." method="POST">
+        <div class="flexClass">
+            <input type="text" id="search" name="search" style="border-radius: 4px 0px 0px 4px;"/>
+            <div>
+                <button type="submit" style="border-radius: 0px 4px 4px 0px;">Rechercher</button>
+            </div>
+        </div>
+    </form>
+
+    <br />
+    <div class="listImage">
+        {% if urls %}
+        {% for url in urls %}
+        <div class="images">
+            <img src="{{ url }}">
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

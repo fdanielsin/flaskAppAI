@@ -1,0 +1,11 @@
+Flask
+matplotlib
+Werkzeug
+Pillow
+azure-cognitiveservices-vision-computervision
+azure-common
+azure-core
+azure-cosmos
+azure-storage-blob
+matplotlib
+azure-cognitiveservices-vision-face
